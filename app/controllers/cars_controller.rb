@@ -1,7 +1,7 @@
 class CarsController < ApplicationController
 
   def index
-    # @cars = Car.where(car.location = input...,  )
+    @cars = Car.where(car.location = params[:location],  )
   end
 
   def show
