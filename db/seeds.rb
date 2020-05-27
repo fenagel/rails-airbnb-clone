@@ -6,15 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+Car.delete_all
+User.delete_all
 
 10.times do
-  User.create(email: "lea@gjed.org", password: "jhwfebs")
+  User.create(email: Faker::Internet.email, password: Faker::Beer.brand)
 end
 40.times do
-  Car.create(name: Faker::Vehicle.color, brand: Faker::Vehicle.manufacture,
+  Car.create(name: Faker::FunnyName.two_word_name,
+             brand: Faker::Vehicle.manufacture,
              model: Faker::Vehicle.model,
-             renting_price: Faker::Vehicle.year,
-             location: Faker::Address.city,
-             experience: 1, user_id: rand(1..2), description: "lorem lorem lorem"
-            )
+             renting_price: rand(80..1000),
+             location: Faker::Address.full_address,
+             experience: rand(1..5), user_id: rand(35..45),
+             description: Faker::Lorem.paragraph)
 end
