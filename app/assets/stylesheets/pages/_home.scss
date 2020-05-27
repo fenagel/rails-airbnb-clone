@@ -16,10 +16,33 @@ h4 {
   padding-top: 25px;
   color: black;
   font-size: 20px;
+  text-align: center;
 }
 
 p {
   color: black;
   text-align: left;
+  padding: 20px;
 }
 
+.container {
+  background-image: url(https://images.pexels.com/photos/3342697/pexels-photo-3342697.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-size: 130%;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.logo {
+  text-align: center;
+}
+
+.cards {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.text {
+  display:flex;
+  justify-content: right;
+}
