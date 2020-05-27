@@ -1,10 +1,12 @@
 <div class="input-group" style="padding: 50px;">
 
   <div class="input-group-prepend">
-    <span class="input-group-text" style="background-color: orange;">Location - Date - Driving Experience</span>
+    <span class="input-group-text" style="background-color: #F6DDBF;">Location - Date - Driving Experience</span>
   </div>
   <input type="text" aria-label="Location" class="form-control">
   <input type="text" aria-label="Date" class="form-control">
   <input type="text" aria-label="Experience" class="form-control">
-  <input type="button" aria-label="Search" class="btn btn-info">
+<!--   <a class="btn btn-info" role="button">Search</a> -->
+<%= link_to "Search", cars_path, class: "btn btn-info" %>
 </div>
+
