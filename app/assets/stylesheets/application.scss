@@ -10,4 +10,10 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/navbar";
 @import "pages/index";
+@import "pages/home";
+
+body {
+  background-color:#f8f9fa;
+}
