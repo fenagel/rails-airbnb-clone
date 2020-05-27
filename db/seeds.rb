@@ -15,6 +15,6 @@ end
              model: Faker::Vehicle.model,
              renting_price: Faker::Vehicle.year,
              location: Faker::Address.city,
-             experience: 1, user_id: rand(1..2)
+             experience: 1, user_id: rand(1..2), description: "lorem lorem lorem"
             )
 end
