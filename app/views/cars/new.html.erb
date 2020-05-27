@@ -8,13 +8,13 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :brand %>
-      <%= f.input :model %>
-      <%= f.input :renting_price %>
-      <%= f.input :location %>
-      <%= f.input :experience %>
-      <%= f.input :description, as: :text %>
+      <%= f.input :name, placeholder: "Title", label_html: { class: 'pr-3' } %>
+      <%= f.input :brand, placeholder: "i.e. BMW", label_html: { class: 'pr-3' } %>
+      <%= f.input :model, placeholder: "i.e. 507 Roadster", label_html: { class: 'pr-3' } %>
+      <%= f.input :renting_price, placeholder: "Per day", label_html: { class: 'pr-3' } %>
+      <%= f.input :location, placeholder: "i.e. Berlin", label_html: { class: 'pr-3' } %>
+      <%= f.input :experience, placeholder: "in years", label_html: { class: 'pr-3' }, label: "Driving Experience" %>
+      <%= f.input :description, as: :text, placeholder: "give us a nice description", label_html: { class: 'pr-3' } %>
       <%= f.input :photo, as: :file %>
     </div>
 
