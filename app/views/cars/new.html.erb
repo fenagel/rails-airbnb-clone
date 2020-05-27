@@ -1,0 +1,25 @@
+<div class="container mt-2">
+  <div class="mb-5">
+    <h1>Welcome To The Community!</h1>
+    <h3>It's Amazing That You Want To Share Your Car!</h3>
+    <h3>Fill Out This Form To Proceed:</h3>
+  </div>
+  <%= simple_form_for(@car) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :brand %>
+      <%= f.input :model %>
+      <%= f.input :renting_price %>
+      <%= f.input :location %>
+      <%= f.input :experience %>
+      <%= f.input :description, as: :text %>
+      <%= f.input :photo, as: :file %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

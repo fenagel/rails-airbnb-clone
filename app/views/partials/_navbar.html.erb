@@ -1,18 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-  <a class="navbar-brand" href="#" >ODTX</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#" >Old-Timer RX</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
+  <div class="collapse navbar-collapse" id="navbarNav" style="display: flex; justify-content: flex-end;">
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Share your car <span class="sr-only">(current)</span></a>
+        <a class="nav-link" <%= link_to "Share your car", new_car_path %><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">Register <span class="sr-only">(current)</span></a>
@@ -24,3 +21,4 @@
     </ul>
   </div>
 </nav>
+
