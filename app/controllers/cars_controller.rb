@@ -11,7 +11,8 @@ class CarsController < ApplicationController
       {
         lat: car.latitude,
         lng: car.longitude
-      }     
+      }
+    end
     else
       @cars = Car.all
     end
