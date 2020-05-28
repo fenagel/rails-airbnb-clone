@@ -13,13 +13,13 @@
       <%= f.input :model, placeholder: "i.e. 507 Roadster", label_html: { class: 'pr-3' } %>
       <%= f.input :renting_price, placeholder: "Per day", label_html: { class: 'pr-3' } %>
       <%= f.input :location, placeholder: "i.e. Berlin", label_html: { class: 'pr-3' } %>
-      <%= f.input :experience, placeholder: "in years", label_html: { class: 'pr-3' }, label: "Driving Experience" %>
+      <%= f.input :experience, collection: 0..70, label_html: { class: 'pr-3' }, label: "Required Driving Experience" %>
       <%= f.input :description, as: :text, placeholder: "give us a nice description", label_html: { class: 'pr-3' } %>
       <%= f.input :photo, as: :file %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, class: "btn btn-primary" %>
+      <%= f.button :submit, class: "btn create-car" %>
     </div>
   <% end %>
 </div>
