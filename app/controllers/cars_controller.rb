@@ -2,12 +2,25 @@ class CarsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    if params[:query].present?
-      sql_query = "location ILIKE :query"
-      @cars = Car.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @cars = Car.all
-    end
+    @cars = Car.geocoded
+    @markers = @cars.map do |car|
+        {
+          lat: car.latitude,
+          lng: car.longitude
+        }
+      end
+    # if params[:query].present?
+    #   sql_query = "location ILIKE :query"
+    #   @cars = Car.where(sql_query, query: "%#{params[:query]}%").geocoded
+    #   @markers = @cars.map do |car|
+    #     {
+    #       lat: car.latitude,
+    #       lng: car.longitude
+    #     }
+    #   end
+    # else
+    #   @cars = Car.all
+    # end
   end
 
   def show
@@ -22,7 +35,7 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
     @car.user = current_user
     if @car.save!
-      redirect_to root_path
+      redirect_to car_path(@car)
     else
       render :new
     end
@@ -47,6 +60,7 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:name, :brand, :model, :renting_price, :experience, :description, :location, :photo)
+    params.require(:car).permit(:name, :brand, :model, :renting_price,
+    :experience, :description, :location, :photo)
   end
 end

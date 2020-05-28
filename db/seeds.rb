@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-Car.delete_all
-User.delete_all
+
+require "open-uri"
+# Car.delete_all
+# User.delete_all
 
 10.times do
   User.create(email: Faker::Internet.email, password: Faker::Beer.brand)
@@ -18,7 +20,7 @@ Car.create(name: Faker::FunnyName.two_word_name,
            model: '2000 Spider',
            renting_price: 80,
            location: 'Berlin',
-           experience: 3, user_id: 55,
+           experience: 3, user_id: 29,
            description: 'Carburettor model, 116\'500 km, service booklet.
            Beautiful and well maintained spider with power windows,
            contemporary Zender body-kit and optional Hardtop.
@@ -30,7 +32,7 @@ Car.create(name: Faker::FunnyName.two_word_name,
            model: '3000 Mk III BJ8',
            renting_price: 80,
            location: 'Zurich',
-           experience: 5, user_id: 54,
+           experience: 5, user_id: 28,
            description: 'Restored with original factory parts.
            Body partially in alloy, new zinc plated chassis.
            sports-cam, steel crankshaft and connecting rods, forged pistons,
@@ -46,7 +48,7 @@ Car.create(name: Faker::FunnyName.two_word_name,
            model: 'Mulsanne Turbo',
            renting_price: 500,
            location: 'Berlin',
-           experience: 4, user_id: 53,
+           experience: 4, user_id: 27,
            description: '78\'000 km, service booklet. Partial restoration
            between 2017 and 2019: dashboard with new leather upholstery,
            wooden applications restored, new air-conditioning compressor,
@@ -59,7 +61,7 @@ Car.create(name: Faker::FunnyName.two_word_name,
            model: ' 2000 CA',
            renting_price: 1000,
            location: 'Montreux',
-           experience: 1, user_id: 52,
+           experience: 1, user_id: 26,
            description: 'Rare Swiss delivered BMW 2000 Coupe with automatic
            gearbox. At the same owner since 2015, the body has been completely
            restored. The interior presents itself in very well maintained
@@ -71,7 +73,7 @@ Car.create(name: Faker::FunnyName.two_word_name,
            model: '635 CSi',
            renting_price: 30,
            location: 'Berlin',
-           experience: 0, user_id: 51,
+           experience: 0, user_id: 25,
            description: 'This BMW was delivered on the 12th March 1985
            through Allmend Garage in Wohlen/AG. It’s a 5-speeder with leather
            interior, electrically operated windows and a sliding roof. The 635
@@ -84,7 +86,7 @@ Car.create(name: Faker::FunnyName.two_word_name,
            model: '370A V12',
            renting_price: 200,
            location: 'Berlin',
-           experience: 5, user_id: 50,
+           experience: 5, user_id: 24,
            description: 'In the late Twenties and early Thirties the
            automotive race in the USA for bigger, better and faster was
            in full swing and manufacturers resorted to ever larger engines
@@ -97,7 +99,7 @@ Car.create(name: Faker::FunnyName.two_word_name,
            model: 'Corvette C1',
            renting_price: 400,
            location: 'Geneva',
-           experience: 2, user_id: 49,
+           experience: 2, user_id: 23,
            description: 'Automatic transmission.
            Early Corvette with the Blue-Flame 6 cylinder engine.
            Only 3\'640 cars built. Original delivery invoice with the car.
@@ -109,10 +111,9 @@ Car.create(name: Faker::FunnyName.two_word_name,
            model: 'Méhari 4x4',
            renting_price: 20,
            location: 'Frankfurt',
-           experience: 1, user_id: 48,
+           experience: 1, user_id: 22,
            description: 'Only 1\'213 cars built Uprated for the Army of Andorra
            to a Citroën GS 4 cylinder engine and gearbox - homologated in
            Germany. Technically in very good condition. Body and interior in
            original condition. Last Swiss MOT including veteran status
            completed in September 2015.')
-
