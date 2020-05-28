@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="mb-5">
+    <h1>Please Fill In The Final Details</h1>
+    <h3>Pick The Dates For Your Booking Request</h3>
+  </div>
+  <%= simple_form_for([ @car, @rental ]) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :start_date, as: :date %>
+      <%= f.input :end_date, as: :date %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
