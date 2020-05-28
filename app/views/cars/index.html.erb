@@ -3,7 +3,7 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
- <div class="container1">
+<div class="container1">
   <div class="row">
     <% @cars.each do |car| %>
       <div class="col-4 pb-3">
@@ -14,11 +14,11 @@
             <% end %>
           </div>
           <div class="card-body">
-            <h5 class="card-title"><p>My name is: <%= car.name.upcase %></p></h5>
+            <h1 class="card-title" style="font-size: 20px;"><%= car.name.upcase %></h1>
             <p class="card-text"> I am a <%= car.brand %></p>
             <p> Model: <%= car.model %></p>
             <p> Location: <%= car.location %></p>
-            <%= link_to "Rent me!", car_path(car) %>
+            <%= link_to "Show more details!", car_path(car) %>
           </div>
         </div>
       </div>
