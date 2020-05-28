@@ -2,6 +2,14 @@ class CarsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   def index
     @cars = Car.all
+    @cars = Car.geocoded    # returns cars with coordinates
+
+    @markers = @cars.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude
+      }
+    end
   end
 
   def show
