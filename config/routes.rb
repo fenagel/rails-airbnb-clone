@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :rentals, only: [:create] do
     resources :reviews, only: [:create]
   end
+  resources :dashboards, only: [:index]
   patch '/rentals/:id/confirm', to: 'pages#confirm', as: 'confirm'
   patch '/rentals/:id/decline', to: 'pages#decline', as: 'decline'
 end

@@ -3,11 +3,11 @@ class RentalsController < ApplicationController
     ## fill in the correct params >> @rental = Rental.new(params?)
     raise
     ## need to implement pundit so that >> @rental.user = current_user
-    if @rental.save!
-      redirect_to root_path
-    else
-      render :create
-    end
+    ## if @rental.save!
+    ##  redirect_to root_path
+    ## else
+    ##  render :create
+    ## end
   end
 
   def confirm
