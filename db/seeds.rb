@@ -115,4 +115,3 @@ Car.create(name: Faker::FunnyName.two_word_name,
            Germany. Technically in very good condition. Body and interior in
            original condition. Last Swiss MOT including veteran status
            completed in September 2015.')
-
