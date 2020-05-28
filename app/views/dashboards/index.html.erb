@@ -1,0 +1,24 @@
+<h1>Hello From Your Dashboard</h1>
+  <div class="row">
+    <div class="col-sm-12 col-md-6 pt-5">
+      <h3>Cars, that I share with the community</h3>
+      <table class="table table-bordered">
+        <tbody>
+          <thead>
+            <th>Car</th>
+            <th>Rental Details</th>
+            <th>Action</th>
+          </thead>
+          <% @user.cars.each do |car| %>
+            <tr>
+              <td><%= car.name %></td>
+              <td><%= car.location %></td>
+              <td>
+                  <i class="fa fa-trash"></i>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
