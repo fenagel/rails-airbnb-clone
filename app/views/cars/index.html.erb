@@ -5,11 +5,11 @@
         <div class="card" style="width: 18rem;">
           <img class="card-img-top" src="https://source.unsplash.com/random/?oldtimer" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title"><p>My name is: <%= car.name.upcase %></p></h5>
+            <h1 class="card-title" style="font-size: 20px;"><%= car.name.upcase %></h1>
             <p class="card-text"> I am a <%= car.brand %></p>
             <p> Model: <%= car.model %></p>
             <p> Location: <%= car.location %></p>
-            <%= link_to "Rent me!", car_path(car) %>
+            <%= link_to "Show more details!", car_path(car) %>
           </div>
         </div>
       </div>
