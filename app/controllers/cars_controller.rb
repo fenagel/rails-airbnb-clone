@@ -1,14 +1,19 @@
 class CarsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+
   def index
-    @cars = Car.all
-    @cars = Car.geocoded    # returns cars with coordinates
+    if params[:query].present?
+      sql_query = "location ILIKE :query"
+      @cars = Car.where(sql_query, query: "%#{params[:query]}%")
+      @cars = Car.geocoded    # returns cars with coordinates
 
     @markers = @cars.map do |car|
       {
         lat: car.latitude,
         lng: car.longitude
-      }
+      }     
+    else
+      @cars = Car.all
     end
   end
 
