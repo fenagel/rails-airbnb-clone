@@ -8,7 +8,11 @@
     <% @cars.each do |car| %>
       <div class="col-4 pb-3">
         <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="https://source.unsplash.com/random/?oldtimer" alt="Card image cap">
+          <div class="card-img-top">
+            <% if car.photo.attached? %>
+              <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fit %>
+            <% end %>
+          </div>
           <div class="card-body">
             <h5 class="card-title"><p>My name is: <%= car.name.upcase %></p></h5>
             <p class="card-text"> I am a <%= car.brand %></p>

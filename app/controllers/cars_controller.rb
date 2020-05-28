@@ -29,7 +29,7 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
     @car.user = current_user
     if @car.save!
-      redirect_to root_path
+      redirect_to car_path(@car)
     else
       render :new
     end
@@ -54,6 +54,7 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:name, :brand, :model, :renting_price, :experience, :description, :location, :photo)
+    params.require(:car).permit(:name, :brand, :model, :renting_price,
+    :experience, :description, :location, :photo)
   end
 end
