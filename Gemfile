@@ -27,6 +27,8 @@ gem 'faker'
 # security (cloudinary)
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
+# implementing map
+gem 'geocoder'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
