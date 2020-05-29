@@ -1,13 +1,17 @@
 class RentalsController < ApplicationController
+  def new
+    @car = Car.find(params[:car_id])
+    @rental = Rental.new
+  end
   def create
-    ## fill in the correct params >> @rental = Rental.new(params?)
-    raise
-    ## need to implement pundit so that >> @rental.user = current_user
-    ## if @rental.save!
-    ##  redirect_to root_path
-    ## else
-    ##  render :create
-    ## end
+    @car = Car.find(params[:car_id])
+    @rental = Rental.new(user_id: current_user.id, car_id: @car.id)
+    @rental.user = current_user
+    if @rental.save!
+     redirect_to dashboards_path
+    else
+     render :new
+    end
   end
 
   def confirm
