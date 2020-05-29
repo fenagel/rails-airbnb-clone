@@ -12,9 +12,14 @@
           <% @user.cars.each do |car| %>
             <tr>
               <td><%= car.name %></td>
-              <td><%= car.location %></td>
+              <td><%= car.location %>, <%= car.renting_price %>$ per Day</td>
               <td>
-                  <i class="fa fa-trash"></i>
+                <%= link_to car_path(car), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="fa fa-trash destroy_car mr-3"></i>
+                <% end %>
+                <%= link_to edit_car_path(car) do %>
+                <i class="far fa-edit edit_car"></i>
+                <% end %>
               </td>
             </tr>
           <% end %>
@@ -30,16 +35,17 @@
           <thead>
             <th>Car</th>
             <th>Rental Details</th>
-            <th>Action</th>
+            <th>Status</th>
           </thead>
           <% @user.rentals.each do |rental| %>
             <tr>
               <td><%= rental.car.name %></td>
-              <td><%= rental.car.location %></td>
-              <td><%= rental.start_date %></td>
-              <td><%= rental.end_date %></td>
-              <td>
-                  <i class="fa fa-trash"></i>
+              <td><%= rental.car.location %>, <%= rental.car.renting_price %>$ per Day</td>
+              <td><% if rental.confirmed %>
+                    <%= "confirmed" %>
+                  <% else %>
+                    <%= "not confirmed" %>
+                  <% end %>
               </td>
             </tr>
           <% end %>
