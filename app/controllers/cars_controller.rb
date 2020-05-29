@@ -47,13 +47,13 @@ class CarsController < ApplicationController
   def update
     @car = Car.find(params[:id])
     @car = Car.update(car_params)
-    redirect_to car_path(@car)
+    redirect_to dashboards_path
   end
 
   def destroy
     @car = Car.find(params[:id])
     @car.destroy
-    redirect_to root_path
+    redirect_to dashboards_path
   end
 
   private
