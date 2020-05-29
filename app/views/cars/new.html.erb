@@ -1,25 +1,27 @@
 <div class="container1 mt-2">
-  <div class="mb-5">
-    <h1>Welcome To The Community!</h1>
-    <h3>It's Amazing That You Want To Share Your Car!</h3>
-    <h3>Fill Out This Form To Proceed:</h3>
+  <div class="pt-5" style="text-align: center">
+    <h1 class="mb-3">Welcome To The Community!</h1>
+    <h3>We're SO glad you would like to share your car!</h3>
   </div>
-  <%= simple_form_for(@car) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <div class="form-inputs">
-      <%= f.input :name, placeholder: "Title", label_html: { class: 'pr-3' } %>
-      <%= f.input :brand, placeholder: "i.e. BMW", label_html: { class: 'pr-3' } %>
-      <%= f.input :model, placeholder: "i.e. 507 Roadster", label_html: { class: 'pr-3' } %>
-      <%= f.input :renting_price, placeholder: "Per day", label_html: { class: 'pr-3' } %>
-      <%= f.input :location, placeholder: "i.e. Berlin", label_html: { class: 'pr-3' } %>
-      <%= f.input :experience, collection: 0..70, label_html: { class: 'pr-3' }, label: "Required Driving Experience" %>
-      <%= f.input :description, as: :text, placeholder: "give us a nice description", label_html: { class: 'pr-3' } %>
-      <%= f.input :photo, as: :file%>
-    </div>
+  <h3 class="m-5">Fill Out This Form To Proceed 👇:</h3>
+  <div class="m-5" style="display: flex; justify-content: left;">
+    <%= simple_form_for(@car) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class="form-inputs" class="pr-3">
+        <%= f.input :name, placeholder: "Title", label_html: { class: 'pr-5 pt-4' } %>
+        <%= f.input :brand, placeholder: "i.e. BMW", label_html: { class: 'pr-5 pt-4' } %>
+        <%= f.input :model, placeholder: "i.e. 507 Roadster", label_html: { class: 'pr-5 pt-4' } %>
+        <%= f.input :renting_price, placeholder: "Per day", label_html: { class: 'pr-3 pt-4' } %>
+        <%= f.input :location, placeholder: "i.e. Berlin", label_html: { class: 'pr-4 pt-4' } %>
+        <%= f.input :experience, collection: 0..70, label_html: { class: 'pr-4 pt-4 pb-4' }, label: "Required Driving Experience" %>
+        <%= f.input :description, as: :text, placeholder: "Additionnal Information", label_html: { class: 'pr-2 pt-4' } %>
+        <%= f.input :photo, as: :file, label_html: { class: 'pr-3 pt-4' } %>
+      </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, class: "btn btn-primary" %>
-    </div>
-  <% end %>
+      <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-primary", class: 'mt-3' %>
+      </div>
+    <% end %>
+  </div>
 </div>
