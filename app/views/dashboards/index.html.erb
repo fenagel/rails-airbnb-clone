@@ -1,55 +1,57 @@
-<h1>Hello From Your Dashboard</h1>
-  <div class="row">
-    <div class="col-sm-12 col-md-6 pt-5">
-      <h3>Cars, that I share with the community</h3>
-      <table class="table table-bordered">
-        <tbody>
-          <thead>
-            <th>Car</th>
-            <th>Rental Details</th>
-            <th>Action</th>
-          </thead>
-          <% @user.cars.each do |car| %>
-            <tr>
-              <td><%= car.name %></td>
-              <td><%= car.location %>, <%= car.renting_price %>$ per Day</td>
-              <td>
-                <%= link_to car_path(car), method: :delete, data: { confirm: "Are you sure?" } do %>
-                <i class="fa fa-trash destroy_car mr-3"></i>
-                <% end %>
-                <%= link_to edit_car_path(car) do %>
-                <i class="far fa-edit edit_car"></i>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
+  <div class="container">
+    <h1>Hello From Your Dashboard</h1>
     <div class="row">
-    <div class="col-sm-12 col-md-6 pt-5">
-      <h3>My Rental requests:</h3>
-      <table class="table table-bordered">
-        <tbody>
-          <thead>
-            <th>Car</th>
-            <th>Rental Details</th>
-            <th>Status</th>
-          </thead>
-          <% @user.rentals.each do |rental| %>
-            <tr>
-              <td><%= rental.car.name %></td>
-              <td><%= rental.car.location %>, <%= rental.car.renting_price %>$ per Day</td>
-              <td><% if rental.confirmed %>
-                    <%= "confirmed" %>
-                  <% else %>
-                    <%= "not confirmed" %>
+      <div class="col-sm-12 col-md-6 pt-5">
+        <h3>Cars, that I share with the community</h3>
+        <table class="table table-bordered">
+          <tbody>
+            <thead>
+              <th>Car</th>
+              <th>Rental Details</th>
+              <th>Action</th>
+            </thead>
+            <% @user.cars.each do |car| %>
+              <tr>
+                <td><%= car.name %></td>
+                <td><%= car.location %>, <%= car.renting_price %>$ per Day</td>
+                <td>
+                  <%= link_to car_path(car), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fa fa-trash destroy_car mr-3"></i>
                   <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+                  <%= link_to edit_car_path(car) do %>
+                  <i class="far fa-edit edit_car"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-sm-12 col-md-6 pt-5">
+        <h3>My Rental requests:</h3>
+        <table class="table table-bordered">
+          <tbody>
+            <thead>
+              <th>Car</th>
+              <th>Rental Details</th>
+              <th>Status</th>
+            </thead>
+            <% @user.rentals.each do |rental| %>
+              <tr>
+                <td><%= rental.car.name %></td>
+                <td><%= rental.car.location %>, <%= rental.car.renting_price %>$ per Day</td>
+                <td><% if rental.confirmed %>
+                      <%= "confirmed" %>
+                    <% else %>
+                      <%= "not confirmed" %>
+                    <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
