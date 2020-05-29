@@ -38,7 +38,7 @@
               </tr>
             </tbody>
           </table>
-          <h2 class="card-trip-pricing">£99.99</h2>
+          <h2 class="card-trip-pricing"><%= @car.renting_price %> $/day</h2>
           <%= link_to "Request now", new_car_rental_path(@car), class: "btn btn-primary"  %>
         </div>
         <div class="row mt-3">
