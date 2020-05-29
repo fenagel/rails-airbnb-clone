@@ -1,12 +1,13 @@
 <div class="container1 mt-2">
-  <div class="mb-5">
+  <div class="mb-5" style="text-align: center;">
     <h1>Welcome To The Community!</h1>
-    <h3>It's Amazing That You Want To Share Your Car!</h3>
+    <h3>It's amazing That You Want To Share Your Car!</h3>
     <h3>Fill Out This Form To Proceed:</h3>
   </div>
-  <%= simple_form_for(@car) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="input">
+    <%= simple_form_for(@car) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <div class="form-inputs">
       <%= f.input :name, placeholder: "Title", label_html: { class: 'pr-3' } %>
       <%= f.input :brand, placeholder: "i.e. BMW", label_html: { class: 'pr-3' } %>
@@ -14,12 +15,12 @@
       <%= f.input :renting_price, placeholder: "Per day", label_html: { class: 'pr-3' } %>
       <%= f.input :location, placeholder: "i.e. Berlin", label_html: { class: 'pr-3' } %>
       <%= f.input :experience, collection: 0..70, label_html: { class: 'pr-3' }, label: "Required Driving Experience" %>
-      <%= f.input :description, as: :text, placeholder: "give us a nice description", label_html: { class: 'pr-3' } %>
+      <%= f.input :description, as: :text, placeholder: "Give us a nice description", label_html: { class: 'pr-3' } %>
       <%= f.input :photo, as: :file%>
     </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, class: "btn btn-primary" %>
+    <div class="form-actions" style="text-align: center;">
+      <%= f.button :submit, class: "btn btn-info" %>
     </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

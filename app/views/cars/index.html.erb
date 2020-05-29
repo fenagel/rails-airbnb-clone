@@ -1,7 +1,7 @@
 <h1 style="text-align: center; padding-bottom: 20px;">Wow! Look how many Old-Timer you can rent</h1>
 <div class="content" style="display: flex; justify-content: space-between;">
   <div id="map"
-       style="width: 60%; height: 600px; margin-left: 60px; position: sticky; top: 0;"
+       style="width: 800px; height: 600px; margin-left: 60px; position: sticky; top: 0;"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
@@ -11,15 +11,16 @@
         <div class="col-4 pb-3" style="display: contents;">
           <div class="card" style="width: 18rem; margin-right: 40px; margin-bottom: 20px;">
             <% if car.photo.attached? %>
-              <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+              <%= cl_image_tag car.photo.key, height: 286, width: 286, crop: :fill %>
             <% else %>
-              <img src="https://source.unsplash.com/1600x900/?oldtimer" width= 650px height= auto class= p-3/>
+              <img src="https://source.unsplash.com/1600x900/?oldtimer" width= 286px height= auto class= p-3/>
             <% end %>
             <div class="card-body" style="text-align: center;">
-              <h1 class="card-title" style="font-size: 20px;"><%= car.name.upcase %></h1>
-              <p class="card-text"> I am a <%= car.brand %></p>
-              <p> Model: <%= car.model %></p>
-              <p> Location: <%= car.location %></p>
+              <h1 class="card-title" style="font-size: 20px;margin-bottom: 10px;"><%= car.name.upcase %></h1>
+              <p class="card-text" style="text-align: left; margin-bottom: -35px;"> I am a <%= car.brand %></p>
+              <p class="card-text" style="text-align: left; margin-bottom: -35px;"> Model: <%= car.model %></p>
+              <p class="card-text" style="text-align: left; margin-bottom: -35px;"> Description: <%= car.description %></p>
+              <p class="card-text" style="text-align: left; margin-bottom: 10px;"> Location: <%= car.location %></p>
               <%= link_to "Discover Details!", car_path(car) %>
             </div>
           </div>
