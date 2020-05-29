@@ -22,3 +22,28 @@
       </table>
     </div>
   </div>
+    <div class="row">
+    <div class="col-sm-12 col-md-6 pt-5">
+      <h3>My Rental requests:</h3>
+      <table class="table table-bordered">
+        <tbody>
+          <thead>
+            <th>Car</th>
+            <th>Rental Details</th>
+            <th>Action</th>
+          </thead>
+          <% @user.rentals.each do |rental| %>
+            <tr>
+              <td><%= rental.car.name %></td>
+              <td><%= rental.car.location %></td>
+              <td><%= rental.start_date %></td>
+              <td><%= rental.end_date %></td>
+              <td>
+                  <i class="fa fa-trash"></i>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
