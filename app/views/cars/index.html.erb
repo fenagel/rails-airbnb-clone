@@ -10,7 +10,11 @@
       <% @cars.each do |car| %>
         <div class="col-4 pb-3" style="display: contents;">
           <div class="card" style="width: 18rem; margin-right: 40px; margin-bottom: 20px;">
-            <img class="card-img-top" src="https://source.unsplash.com/random/?oldtimer" alt="Card image cap">
+            <% if car.photo.attached? %>
+              <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+            <% else %>
+              <img src="https://source.unsplash.com/1600x900/?oldtimer" width= 650px height= auto class= p-3/>
+            <% end %>
             <div class="card-body" style="text-align: center;">
               <h1 class="card-title" style="font-size: 20px;"><%= car.name.upcase %></h1>
               <p class="card-text"> I am a <%= car.brand %></p>
